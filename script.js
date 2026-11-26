@@ -18,6 +18,7 @@ const projects = [
     "https://aizestate.com/",
     "#d9e2e8",
     "#253b50",
+    "images/aiz.png",
   ],
   [
     "MailPilot Pro",
@@ -28,6 +29,7 @@ const projects = [
     "https://mailpilot-pro.streamlit.app/",
     "#e5d8ec",
     "#51425f",
+    "images/mailpilot.png",
   ],
   [
     "MC Homes",
@@ -38,6 +40,7 @@ const projects = [
     "https://mchomes.ae/index.html",
     "#e6d7b8",
     "#182a3b",
+    "images/mc-homes.png",
   ],
   [
     "Lumina Commerce",
@@ -48,6 +51,7 @@ const projects = [
     "https://lumina-ecommerce-ten.vercel.app/",
     "#ead8c9",
     "#674a37",
+    "images/lumina.png",
   ],
   [
     "Appointment Studio",
@@ -58,6 +62,7 @@ const projects = [
     "https://tinyurl.com/appointment-studio",
     "#F8F6F2",
     "#2F343A",
+    "images/appointment.png",
   ],
   [
     "Menu-Based Chatbot",
@@ -68,6 +73,7 @@ const projects = [
     "https://chatbot-roan-mu.vercel.app/",
     "#e7d5df",
     "#624659",
+    "images/chatbot.png",
   ],
   [
     "TeacherHub",
@@ -78,8 +84,25 @@ const projects = [
     "",
     "#e5e3c9",
     "#5a5d39",
+    "images/teacherhub.png",
   ],
 ];
+// Use real screenshots when supplied; retain the original illustration otherwise.
+function mountProjectScreenshot(host, project) {
+  if (!host || !project[8]) return;
+  const image = new Image();
+  image.className = "project-screenshot";
+  image.alt = `${project[0]} — actual project screenshot`;
+  image.decoding = "async";
+  image.addEventListener("load", () => {
+    host.replaceChildren(image);
+    host.classList.add("has-screenshot");
+    host.hidden = false;
+  }, { once: true });
+  // Missing or invalid files leave the original preview (or hidden detail slot) intact.
+  image.src = project[8];
+}
+
 const root = document.querySelector("#projects");
 function render(filter) {
   if (!root) return;
@@ -91,6 +114,7 @@ function render(filter) {
       el.className = "project";
       el.innerHTML = `<div class="preview" style="--tone:${p[6]};--dark:${p[7]}"><div class="mock" aria-hidden="true"><div class="mockbar">● ● ● &nbsp; Concept preview</div><div class="mockbody"><div class="mockside">${p[0]}<div class="mockline"></div><div class="mockline"></div></div><div class="mockmain"><strong>${p[0]}</strong><small>PROJECT INTERFACE / ILLUSTRATION</small><div class="mocktiles"><i></i><i></i><i></i></div><div class="mockline"></div><div class="mockline"></div></div></div></div></div><div class="projectbody"><div class="meta">${p[2]}</div><h3>${p[0]}</h3><p>${p[3]}</p><div class="tags">${p[4].map((t) => `<span>${t}</span>`).join("")}</div><button class="detailbtn" data-project="${projects.indexOf(p)}">Explore project →</button>${p[5] ? `<a href="${p[5]}" target="_blank" rel="noopener noreferrer">Visit live project ↗</a>` : ""}</div>`;
       root.append(el);
+      mountProjectScreenshot(el.querySelector(".preview"), p);
     });
 }
 render("all");
@@ -147,6 +171,7 @@ const slide = document.querySelector("#slide"),
 function showSlide() {
   const p = projects[features[current]];
   slide.innerHTML = `<div class="slidecopy"><div class="meta">${p[2]}</div><h3>${p[0]}</h3><p>${p[3]}</p><div class="tags">${p[4].map((t) => `<span>${t}</span>`).join("")}</div><button class="btn detailbtn" data-project="${features[current]}">Explore project →</button></div><div class="slidevisual"><div class="screenbar">● ● ● <span>PROJECT OVERVIEW</span></div><div class="screencontent"><small>${p[2]}</small><strong>${p[0]}</strong><div class="screenblocks"><i></i><i></i><i></i></div><div class="screenline"></div><div class="screenline short"></div><small>Illustrative project preview</small></div></div>`;
+  mountProjectScreenshot(slide.querySelector(".slidevisual"), p);
   dots.replaceChildren();
   features.forEach((_, i) => {
     const b = document.createElement("button");
@@ -228,7 +253,8 @@ document.addEventListener("click", (e) => {
   const i = Number(b.dataset.project),
     p = projects[i];
   document.querySelector("#detailContent").innerHTML =
-    `<div class="meta">${p[2]}</div><h2>${p[0]}</h2><p>${p[3]}</p><h3>Project highlights</h3><ul>${(specifics[i] || []).map((x) => `<li>${x}</li>`).join("")}</ul><h3>Technology stack</h3><div class="tags">${p[4].map((t) => `<span>${t}</span>`).join("")}</div>${p[5] ? `<a class="btn" href="${p[5]}" target="_blank" rel="noopener noreferrer">Open live project ↗</a>` : "<p>Portfolio project overview · public demo not linked.</p>"}`;
+    `<div class="meta">${p[2]}</div><h2>${p[0]}</h2><p>${p[3]}</p><div class="detail-screenshot" hidden></div><h3>Project highlights</h3><ul>${(specifics[i] || []).map((x) => `<li>${x}</li>`).join("")}</ul><h3>Technology stack</h3><div class="tags">${p[4].map((t) => `<span>${t}</span>`).join("")}</div>${p[5] ? `<a class="btn" href="${p[5]}" target="_blank" rel="noopener noreferrer">Open live project ↗</a>` : "<p>Portfolio project overview · public demo not linked.</p>"}`;
+  mountProjectScreenshot(document.querySelector("#detailContent .detail-screenshot"), p);
   details.showModal();
 });
 document.querySelector("#closeDetails")?.addEventListener("click", () => details?.close());
