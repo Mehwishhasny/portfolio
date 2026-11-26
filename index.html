@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Web development, business applications, database integration and automation. Explore selected projects and discuss your next digital solution."
+    />
+    <title>Mehwish Zeeshan | Web Developer & Digital Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script src="script.js" defer></script>
+    <style>
+      .mz-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .mz-layout p {
+        line-height: 1.75;
+      }
+      .mz-benefits {
+        padding-left: 20px;
+        line-height: 2;
+        margin: 20px 0;
+      }
+      .mz-demo {
+        background: #0f172a;
+        color: #e2e8f0;
+        border: 1px solid #334155;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 15px 40px #0f172a20;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        min-width: 0;
+      }
+      .mz-demo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 45px #2563eb25;
+      }
+      .mz-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        color: #94a3b8;
+        margin-bottom: 18px;
+      }
+      .mz-top span:last-child {
+        color: #93c5fd;
+      }
+      .mz-sheet {
+        background: white;
+        color: #0f172a;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .mz-sheet > strong {
+        display: block;
+        background: #1e3a5f;
+        color: white;
+        padding: 12px;
+        font-size: 12px;
+      }
+      .mz-sheet table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+      .mz-sheet th,
+      .mz-sheet td {
+        padding: 8px 5px;
+        text-align: left;
+        border: 1px solid #e2e8f0;
+      }
+      .mz-sheet th {
+        background: #e2e8f0;
+      }
+      .mz-sheet tbody tr {
+        animation: mzRow 8s infinite;
+      }
+      .mz-sheet tbody tr:nth-child(2) {
+        animation-delay: 2s;
+      }
+      .mz-sheet tbody tr:nth-child(3) {
+        animation-delay: 4s;
+      }
+      @keyframes mzRow {
+        0%,
+        35%,
+        100% {
+          background: white;
+        }
+        10%,
+        25% {
+          background: #bfdbfe;
+        }
+      }
+      .mz-connector {
+        height: 28px;
+        width: 2px;
+        background: #334155;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .mz-connector:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 12px;
+        background: #60a5fa;
+        animation: mzTravel 1s linear infinite;
+      }
+      @keyframes mzTravel {
+        from {
+          top: -12px;
+        }
+        to {
+          top: 28px;
+        }
+      }
+      .mz-engine {
+        border: 1px solid #3b82f6;
+        background: #172d4d;
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+      }
+      .mz-engine p {
+        font: 11px monospace;
+        color: #93c5fd;
+        min-height: 26px;
+        margin: 8px 0;
+      }
+      .mz-progress {
+        height: 4px;
+        background: #334155;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 12px 0;
+      }
+      .mz-progress i {
+        display: block;
+        height: 100%;
+        background: #60a5fa;
+        transform-origin: left;
+        animation: mzProgress 8s linear infinite;
+      }
+      @keyframes mzProgress {
+        0% {
+          transform: scaleX(0);
+        }
+        85%,
+        100% {
+          transform: scaleX(1);
+        }
+      }
+      .mz-output,
+      .mz-flow {
+        display: flex;
+        gap: 7px;
+        align-items: stretch;
+      }
+      .mz-output > div,
+      .mz-flow > div {
+        flex: 1;
+        min-width: 0;
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        padding: 12px 6px;
+        text-align: center;
+        animation: mzGlow 8s infinite;
+        transition: transform 0.3s;
+      }
+      .mz-output strong,
+      .mz-flow strong {
+        display: block;
+        font-size: 11px;
+        overflow-wrap: anywhere;
+        color: #f8fafc;
+      }
+      .mz-output small,
+      .mz-flow small {
+        display: block;
+        font-size: 10px;
+        color: #93c5fd;
+        margin-top: 6px;
+      }
+      .mz-output > div:nth-child(2),
+      .mz-flow > div:nth-child(3) {
+        animation-delay: 2s;
+      }
+      .mz-output > div:nth-child(3),
+      .mz-flow > div:nth-child(5) {
+        animation-delay: 4s;
+      }
+      .mz-flow > div:nth-child(7) {
+        animation-delay: 6s;
+      }
+      @keyframes mzGlow {
+        0%,
+        35%,
+        100% {
+          border-color: #334155;
+        }
+        12%,
+        25% {
+          border-color: #60a5fa;
+          box-shadow: 0 0 14px #60a5fa40;
+        }
+      }
+      .mz-flow > div:hover,
+      .mz-output > div:hover {
+        transform: translateY(-5px);
+      }
+      .mz-flow b {
+        display: block;
+        color: #60a5fa;
+        font-size: 25px;
+        margin-bottom: 8px;
+      }
+      .mz-flow > i {
+        align-self: center;
+        color: #60a5fa;
+        font-style: normal;
+        animation: mzArrow 1s infinite alternate;
+      }
+      @keyframes mzArrow {
+        to {
+          transform: translateX(3px);
+          opacity: 0.5;
+        }
+      }
+      .mz-log {
+        background: #080f1e;
+        border-radius: 8px;
+        padding: 12px;
+        font: 11px/2 monospace;
+        color: #93c5fd;
+      }
+      .mz-log div {
+        animation: mzLog 8s infinite;
+      }
+      .mz-log div:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .mz-log div:nth-child(3) {
+        animation-delay: 2s;
+      }
+      .mz-log div:nth-child(4) {
+        animation-delay: 3s;
+      }
+      @keyframes mzLog {
+        0%,
+        100% {
+          opacity: 0.25;
+        }
+        15%,
+        85% {
+          opacity: 1;
+        }
+      }
+      .mz-note {
+        font-size: 10px !important;
+        color: #94a3b8;
+        text-align: center;
+        margin: 12px 0 0;
+      }
+      .mz-features {
+        margin-top: 35px;
+      }
+      .mz-compact {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .services article,
+      .project {
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s,
+          border-color 0.3s;
+      }
+      .services article:hover,
+      .project:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 30px #0f172a18;
+        border-color: #60a5fa;
+      }
+      .mz-layout .actions {
+        margin-top: 20px;
+      }
+      @media (max-width: 950px) {
+        .mz-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .mz-demo {
+          padding: 12px;
+        }
+        .mz-flow {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .mz-flow > i {
+          display: none;
+        }
+        .mz-output small {
+          font-size: 9px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mz-demo *,
+        .mz-connector:after {
+          animation: none !important;
+          opacity: 1 !important;
+        }
+        .mz-demo:hover,
+        .services article:hover,
+        .project:hover {
+          transform: none;
+        }
+      }
+      .services article {
+        position: relative;
+        overflow: hidden;
+      }
+      .services article::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s ease;
+        pointer-events: none;
+      }
+      .services article:hover::before {
+        transform: scaleX(1);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .services article::before {
+          transition: none;
+        }
+      }
+      /* Sliding technology strip */
+      .strip {
+        width: 100%;
+        overflow: hidden;
+        background: #0f172a !important;
+        color: #f8fafc !important;
+        padding: 24px 0;
+        margin: 0;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .strip-track {
+        display: flex;
+        width: max-content;
+        animation: mzStripSlide 35s linear infinite;
+      }
+      .strip-group {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 40px;
+        padding-right: 40px;
+      }
+      .strip-group span {
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        color: #f8fafc;
+      }
+      .strip-group b {
+        color: #60a5fa;
+        font-size: 19px;
+        flex-shrink: 0;
+      }
+      @keyframes mzStripSlide {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .strip:hover .strip-track {
+        animation-play-state: paused;
+      }
+      /* Contact cards and footer links */
+      .mz-contact-links[hidden],
+      .mz-footer-links[hidden] {
+        display: none !important;
+      }
+      .mz-contact-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 26px 0;
+      }
+      .mz-contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        padding: 14px 12px;
+        background: #fff;
+        color: #0f172a;
+        border: 1px solid #dbe3ee;
+        border-radius: 9px;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s,
+          border-color 0.25s;
+      }
+      .mz-contact-link:hover {
+        transform: translateY(-4px);
+        border-color: #60a5fa;
+        box-shadow: 0 8px 20px #2563eb18;
+      }
+      .mz-contact-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        flex: none;
+        color: #2563eb;
+        background: #eaf1ff;
+        border-radius: 7px;
+      }
+      .mz-contact-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      .mz-contact-copy {
+        min-width: 0;
+      }
+      .mz-contact-copy strong,
+      .mz-contact-copy small {
+        display: block;
+        overflow-wrap: anywhere;
+      }
+      .mz-contact-copy strong {
+        font-size: 13px;
+      }
+      .mz-contact-copy small {
+        font-size: 11px;
+        color: #475569;
+      }
+      .mz-footer-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .mz-footer-links a {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        color: #2563eb;
+        background: #fff;
+        border: 1px solid #dbe3ee;
+        border-radius: 8px;
+        transition:
+          transform 0.25s,
+          background 0.25s,
+          color 0.25s;
+      }
+      .mz-footer-links a:hover {
+        transform: translateY(-3px);
+        background: #2563eb;
+        color: white;
+      }
+      .mz-footer-links svg {
+        width: 19px;
+        height: 19px;
+      }
+      footer.wrap {
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 768px) {
+        .strip {
+          padding: 18px 0;
+        }
+        .strip-group {
+          gap: 25px;
+          padding-right: 25px;
+        }
+        .strip-group span {
+          font-size: 11px;
+        }
+        .strip-track {
+          animation-duration: 25s;
+        }
+        .mz-contact-links {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 480px) {
+        .mz-contact-links {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .strip-track {
+          animation: none;
+          width: 100%;
+        }
+        .strip-group {
+          flex-wrap: wrap;
+          padding: 0 20px;
+        }
+        .strip-group[aria-hidden="true"] {
+          display: none;
+        }
+        .mz-contact-link:hover,
+        .mz-footer-links a:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="#home"
+          ><span class="monogram">MZ</span
+          ><small>MEHWISH ZEESHAN <b>WEB & DIGITAL SOLUTIONS</b></small></a
+        ><button id="menu" aria-expanded="false" aria-controls="navlinks">
+          Menu
+        </button>
+        <div id="navlinks">
+          <a href="#work">Work</a><a href="#services">Services</a
+          ><a href="#automation">Automation</a
+          ><a href="#integrations">Integrations</a><a href="#about">About</a
+          ><a class="btn small" href="#contact">Let's talk ↗</a>
+        </div>
+      </nav>
+    </header>
+    <main id="home">
+      <section class="hero wrap">
+        <div>
+          <div class="eyebrow"><i></i> UAE BASED · OPEN TO REMOTE PROJECTS</div>
+          <h1>
+            Building digital solutions<br /><em>for modern businesses.</em>
+          </h1>
+          <p>
+            I’m Mehwish Zeeshan, a developer building professional websites,
+            business applications, AI solutions and Google Sheets automation
+            that turn everyday challenges into practical digital experiences.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#work">Explore my work ↘</a
+            ><a class="outline" href="#contact">Discuss a project</a>
+          </div>
+        </div>
+        <div
+          class="heroart workspace"
+          role="region"
+          aria-label="Illustrative development workspace carousel"
+        >
+          <div class="orb"></div>
+          <div class="terminal">
+            <div class="workspacebar">
+              <span class="dots">● ● ●</span><span id="wsFile">index.html</span>
+            </div>
+            <div id="wsVisual" class="wsVisual" aria-hidden="true"></div>
+            <div id="wsCode" class="wsCode" aria-hidden="true"></div>
+            <div class="terminalfoot">
+              <span id="wsStatus">BUILD / WEB</span
+              ><span class="wsLive">● READY</span>
+            </div>
+          </div>
+          <div class="wsControls">
+            <button id="wsPrev" aria-label="Previous workspace">←</button>
+            <div id="wsDots"></div>
+            <button id="wsNext" aria-label="Next workspace">→</button
+            ><button id="wsPause" aria-label="Pause workspace animation">
+              Ⅱ
+            </button>
+          </div>
+          <span class="wsLabel" id="wsLabel">Web development</span>
+        </div>
+      </section>
+      <div class="strip">
+        <div class="strip-track">
+          <div class="strip-group">
+            <span>WEB DEVELOPMENT</span><b>✳</b>
+            <span>BUSINESS APPLICATIONS</span><b>✳</b>
+            <span>DATABASE INTEGRATION</span><b>✳</b>
+            <span>GOOGLE SHEETS AUTOMATION</span><b>✳</b>
+            <span>AI & CHATBOTS</span><b>✳</b>
+            <span>SMART BUSINESS INTEGRATIONS</span><b>✳</b>
+            <span>API INTEGRATION</span><b>✳</b>
+            <span>ECOMMERCE DEVELOPMENT</span><b>✳</b>
+          </div>
+          <div class="strip-group" aria-hidden="true">
+            <span>WEB DEVELOPMENT</span><b>✳</b>
+            <span>BUSINESS APPLICATIONS</span><b>✳</b>
+            <span>DATABASE INTEGRATION</span><b>✳</b>
+            <span>GOOGLE SHEETS AUTOMATION</span><b>✳</b>
+            <span>AI & CHATBOTS</span><b>✳</b>
+            <span>SMART BUSINESS INTEGRATIONS</span><b>✳</b>
+            <span>API INTEGRATION</span><b>✳</b>
+            <span>ECOMMERCE DEVELOPMENT</span><b>✳</b>
+          </div>
+        </div>
+      </div>
+      <section class="wrap section" id="work">
+        <div class="eyebrow">01 / SELECTED WORK</div>
+        <div class="sectionhead">
+          <h2>Selected <em>projects.</em></h2>
+          <p>
+            A selection of websites, applications and functional prototypes
+            across different industries.
+          </p>
+        </div>
+        <div class="featured" aria-label="Featured projects">
+          <div class="featuretop">
+            <span>FEATURED WORK</span>
+            <div>
+              <button id="prev" aria-label="Previous project">←</button
+              ><button id="next" aria-label="Next project">→</button
+              ><button id="pause" aria-label="Pause slideshow">Pause</button>
+            </div>
+          </div>
+          <div id="slide"></div>
+          <div id="dots" class="slidedots"></div>
+        </div>
+        <div class="filters" aria-label="Filter projects">
+          <button class="active" data-filter="all">All projects</button
+          ><button data-filter="web">Websites</button
+          ><button data-filter="app">Applications</button
+          ><button data-filter="ai">AI & automation</button>
+        </div>
+        <div class="projects" id="projects"></div>
+        <noscript>Enable JavaScript to view the project collection.</noscript>
+      </section>
+      <dialog id="details">
+        <button id="closeDetails" aria-label="Close project details">×</button>
+        <div id="detailContent"></div>
+      </dialog>
+      <section id="services" class="tint">
+        <div class="wrap section">
+          <div class="eyebrow">SERVICES</div>
+          <h2>Development <em>services.</em></h2>
+          <div class="services">
+            <article>
+              <span>01 / WEB</span>
+              <h3>Website development</h3>
+              <p>
+                Responsive business websites, landing pages, redesigns and
+                website fixes.
+              </p>
+            </article>
+            <article>
+              <span>02 / SOFTWARE</span>
+              <h3>Business applications</h3>
+              <p>
+                Custom dashboards, booking systems and ecommerce experiences.
+              </p>
+            </article>
+            <article>
+              <span>03 / DATA</span>
+              <h3>Database integration</h3>
+              <p>
+                Supabase databases, authentication, access controls and
+                structured data workflows.
+              </p>
+            </article>
+            <article>
+              <span>04 / AUTOMATION</span>
+              <h3>AI & automation</h3>
+              <p>
+                Email campaign tools, AI prototypes and customized Chatbots.
+              </p>
+            </article>
+            <article>
+              <span>05 / SPREADSHEETS</span>
+              <h3>Google Sheets Automation</h3>
+              <p>
+                Automatically segregate, categorize and distribute data into
+                relevant sheets based on your business rules.
+              </p>
+            </article>
+            <article>
+              <span>06 / INTEGRATION</span>
+              <h3>Smart Business Integrations</h3>
+              <p>
+                Connect websites, databases, notifications and dashboards to
+                reduce repetitive manual work.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="automation" class="tint">
+        <div class="wrap section">
+          <div class="mz-layout">
+            <div>
+              <div class="eyebrow">GOOGLE SHEETS AUTOMATION</div>
+              <h2>Your data.<br /><em>Automatically organized.</em></h2>
+              <p>
+                Turn raw spreadsheet data into structured, organized
+                information. Automatically segregate records into separate
+                sheets based on status, department, location or custom business
+                rules.
+              </p>
+              <ul class="mz-benefits">
+                <li>Automatic data segregation and categorization</li>
+                <li>Connected sheet updates</li>
+                <li>Duplicate detection and data validation</li>
+                <li>Customized reports and dashboards</li>
+                <li>Reduced repetitive manual work</li>
+              </ul>
+              <a class="btn" href="#contact">Automate your workflow ↗</a>
+            </div>
+            <div class="mz-demo">
+              <div class="mz-top">
+                <span>WORKFLOW SIMULATION</span><span>● RUNNING</span>
+              </div>
+              <div class="mz-sheet">
+                <strong>MASTER GOOGLE SHEET</strong>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Client</th>
+                      <th>Department</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>001</td>
+                      <td>Client A</td>
+                      <td>Sales</td>
+                      <td>New</td>
+                    </tr>
+                    <tr>
+                      <td>002</td>
+                      <td>Client B</td>
+                      <td>Operations</td>
+                      <td>Active</td>
+                    </tr>
+                    <tr>
+                      <td>003</td>
+                      <td>Client C</td>
+                      <td>Finance</td>
+                      <td>Completed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mz-connector"></div>
+              <div class="mz-engine">
+                <strong>Automation Engine</strong>
+                <p id="mzAutomationText">Reading source data...</p>
+                <div class="mz-progress"><i></i></div>
+              </div>
+              <div class="mz-connector"></div>
+              <div class="mz-output">
+                <div>
+                  <strong>New Leads</strong
+                  ><small>Client A · Categorized</small>
+                </div>
+                <div>
+                  <strong>Active Clients</strong
+                  ><small>Client B · Updated</small>
+                </div>
+                <div>
+                  <strong>Completed</strong><small>Client C · Organized</small>
+                </div>
+              </div>
+              <p class="mz-note">Illustrative simulation · Sample data</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="integrations" class="wrap section mz-compact">
+        <div class="mz-layout">
+          <div>
+            <div class="eyebrow">SMART BUSINESS INTEGRATIONS</div>
+            <h2>Connected systems.<br /><em>Smarter workflows.</em></h2>
+            <p>
+              Connect your website, database and business tools. Automatically
+              capture customer information, store records, trigger notifications
+              and update dashboards.
+            </p>
+            <div class="tags">
+              <span>API Integration</span><span>Database Sync</span
+              ><span>Automated Notifications</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#contact">Connect your systems ↗</a>
+            </div>
+          </div>
+          <div class="mz-demo">
+            <div class="mz-top">
+              <span>CONNECTED WORKFLOW</span><span>● AUTOMATED</span>
+            </div>
+            <div class="mz-flow">
+              <div>
+                <b>⌘</b><strong>Website</strong><small>Capture data</small>
+              </div>
+              <i>→</i>
+              <div>
+                <b>▤</b><strong>Database</strong><small>Store records</small>
+              </div>
+              <i>→</i>
+              <div>
+                <b>✉</b><strong>Notification</strong
+                ><small>Trigger alerts</small>
+              </div>
+              <i>→</i>
+              <div>
+                <b>▥</b><strong>Dashboard</strong><small>Update insights</small>
+              </div>
+            </div>
+            <div class="mz-progress"><i></i></div>
+            <div class="mz-log">
+              <div>✓ Customer information received</div>
+              <div>✓ Database record created</div>
+              <div>✓ Notification triggered</div>
+              <div>✓ Dashboard updated</div>
+            </div>
+            <p class="mz-note">Illustrative integration simulation</p>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section process">
+        <div class="eyebrow">MY APPROACH</div>
+        <h2>From idea to <em>implementation.</em></h2>
+        <div class="services">
+          <article>
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>Understand the business needs and define the scope.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Design</h3>
+            <p>Plan responsive interfaces and user workflows.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Develop</h3>
+            <p>Build the interface, logic and data integrations.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Test & deliver</h3>
+            <p>Check functionality and prepare for deployment.</p>
+          </article>
+        </div>
+      </section>
+      <section class="wrap section about" id="about">
+        <div>
+          <div class="eyebrow">ABOUT</div>
+          <h2>Developer.<br /><em>Problem solver.</em></h2>
+        </div>
+        <div>
+          <p>
+            I aim to develop digital solutions with a focus on usability, clean
+            interfaces and practical business requirements. My work spans real
+            estate websites, email campaign software, ecommerce and AI-enabled
+            prototypes.
+          </p>
+          <p>
+            I'm interested in collaborating with businesses and teams
+            internationally, whether on a focused website improvement or a
+            longer-term development project.
+          </p>
+          <h3>Tools & technologies</h3>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span
+            ><span>Python</span><span>Streamlit</span><span>SQL</span
+            ><span>Supabase</span><span>React Native</span><span>Expo</span
+            ><span>GitHub</span><span>Hostinger</span><span>Google Sheets</span
+            ><span>Google Apps Script</span><span>API Integration</span>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section" id="contact">
+        <div class="contact">
+          <div class="eyebrow">GET IN TOUCH</div>
+          <h2>Let’s discuss<br /><em>your next project.</em></h2>
+          <p>
+            Available for freelance projects, website improvements and remote
+            development opportunities.
+          </p>
+          <div
+            id="contactLinks"
+            class="mz-contact-links"
+            aria-label="Direct contact links"
+            hidden
+          ></div>
+          <form id="inquiry">
+            <label
+              >Your name<input name="name" required placeholder="Name" /></label
+            ><label
+              >Project type<select name="type">
+                <option>Website development</option>
+                <option>Business application</option>
+                <option>AI or automation</option>
+                <option>Google Sheets automation</option>
+                <option>Business integrations</option>
+                <option>Remote job opportunity</option>
+                <option>Other</option>
+              </select></label
+            ><label class="wide"
+              >Tell me about your project<textarea
+                name="message"
+                required
+                rows="4"
+                placeholder="A little about what you need…"
+              ></textarea></label
+            ><button class="btn" type="submit">Prepare inquiry ↗</button>
+            <p id="status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <strong>MEHWISH ZEESHAN<span>.</span></strong
+      ><span>Web development & digital solutions</span>
+      <div
+        id="footerLinks"
+        class="mz-footer-links"
+        aria-label="Contact and social links"
+        hidden
+      ></div>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
